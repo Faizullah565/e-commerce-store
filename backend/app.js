@@ -7,7 +7,14 @@ const app = express()
 // ========= CONFIGURE DOTENV ===================
 dotenv.config()
 
-app.use(cors({origin:"https://e-commerce-store-orpin-eight.vercel.app/"}))
+// app.use(cors({origin:"https://e-commerce-store-orpin-eight.vercel.app/"}))
+app.use(
+  cors({
+    origin: "https://e-commerce-store-orpin-eight.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
 app.use(express.json())
 // =========== IMPORT PORT FRON .ENV FILE ==============
 const port = process.env.PORT
@@ -34,6 +41,8 @@ app.get("/", (req, res)=>{
   res.send("Hello")
 })
 // =========== APP LISTEN ==============
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`)
+// })
+
+export default app;
