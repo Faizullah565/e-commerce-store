@@ -59,7 +59,6 @@ export const userLogin = [
     body('email').isEmail().normalizeEmail().withMessage('Invalid email address'),
     body('password').isLength({ min: 8 }).isStrongPassword().withMessage('Password must be strong and at least 8 characters'),
     async (req, res) => {
-        console.log("🚀 ~ req:", req)
         try {
             const { email, password } = req.body
             const errors = validationResult(req);
