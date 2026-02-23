@@ -1,0 +1,33 @@
+.dashboard-container {
+  padding: 25px;
+}
+
+.dashboard-title {
+  margin-bottom: 10px !important;
+  font-weight: bold !important;
+}
+
+.dashboard-card {
+  border-radius: 15px !important;
+  /* box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1) !important; */
+  transition: 0.3s ease-in-out !important;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+}
+
+.revenue {
+  background: linear-gradient(135deg, #4caf50, #2e7d32) !important;
+  color: white !important;
+}
+
+.orders {
+  background: linear-gradient(135deg, #2196f3, #1565c0) !important;
+  color: white !important;
+}
+
+.quantity {
+  background: linear-gradient(135deg, #ff9800, #ef6c00) !important;
+  color: white !important;
+}

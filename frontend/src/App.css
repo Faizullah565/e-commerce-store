@@ -1,0 +1,39 @@
+
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
+.MuiCardContent-root.css-1lt5qva-MuiCardContent-root {
+    padding: 8px 10px !important;
+}
+
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1j74uew-MuiPaper-root-MuiCard-root {
+    background-color: #aba7a729;
+    padding: 0px;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-4ihqiu-MuiPaper-root-MuiCard-root {
+    padding: 10px !important;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-dmcl8r-MuiPaper-root-MuiCard-root {
+    padding: 8px !important;
+}
+
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.css-1u8xl8z-MuiGrid-root {
+    justify-content: space-around;
+}
+.css-lwgpaz-MuiGrid-root {
+   
+    width: 50%;
+}
