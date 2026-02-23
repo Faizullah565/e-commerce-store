@@ -6,6 +6,9 @@ import bcrypt from "bcryptjs"
 import Token from "../models/Tokens.js"
 import transporter from "../utils/nodemailer.js"
 import crypto from "crypto";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 // ======================CREATE USER CONTROLLER =======================
 export const createUser = [
@@ -56,6 +59,7 @@ export const userLogin = [
     body('email').isEmail().normalizeEmail().withMessage('Invalid email address'),
     body('password').isLength({ min: 8 }).isStrongPassword().withMessage('Password must be strong and at least 8 characters'),
     async (req, res) => {
+        console.log("🚀 ~ req:", req)
         try {
             const { email, password } = req.body
             const errors = validationResult(req);
@@ -185,7 +189,7 @@ export const forgotPassword = async (req, res) => {
         user.resetPasswordToken = resetToken
         user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 min
         await user.save();
-        const resetURL = `http://localhost:5173/reset-password/${resetToken}`;
+        const resetURL = `${process.env.RESET_PASSWORD}/${resetToken}`;
         const mailOption = {
             from: `"Faizullah Balghari" <${process.env.SMTP_SENDER}>`,
             to: email,
