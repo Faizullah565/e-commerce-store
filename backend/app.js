@@ -43,15 +43,15 @@ app.get("/", (req, res) => {
 })
 
 app.get("/api/test", (req, res) => {
-  res.json({ ok: true })
+  res.send("Hello Test")
 })
 
 
-export default app
+// export default app
 
 
 
 
-// app.listen(port, () => {
-//   console.log(`Server is running on http://localhost:${port}`)
-// })
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`)
+})
