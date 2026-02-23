@@ -7,7 +7,7 @@ const app = express()
 // ========= CONFIGURE DOTENV ===================
 dotenv.config()
 
-app.use(cors())
+app.use(cors({origin:"https://vercel.com/faizs-projects-985dffc8"}))
 app.use(express.json())
 // =========== IMPORT PORT FRON .ENV FILE ==============
 const port = process.env.PORT
