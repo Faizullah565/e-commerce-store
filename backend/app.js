@@ -47,11 +47,11 @@ app.get("/api/test", (req, res) => {
 })
 
 
-// export default app
+export default app
 
 
 
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server is running on http://localhost:${port}`)
+// })
