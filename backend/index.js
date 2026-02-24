@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 // Load env FIRST
 dotenv.config();
 
-import connectDB from "../backend/config/db.js";
+import connectDB from "./config/db.js";
 
 // =========== CREATE EXPRESS APP =============
 const app = express();
@@ -41,11 +41,11 @@ const connectDatabase = async () => {
 await connectDatabase();
 
 // ============== IMPORT ROUTERS ===========================
-import userRouter from "../backend/routes/users.routes.js";
-import productRouter from "../backend/routes/products.routes.js";
-import cartRouter from "../backend/routes/carts.routes.js";
-import orderRouter from "../backend/routes/order.routes.js";
-import fetchUser from "../backend/middleware/fetchUser.js";
+import userRouter from "./routes/users.routes.js";
+import productRouter from "./routes/products.routes.js";
+import cartRouter from "./routes/carts.routes.js";
+import orderRouter from "./routes/order.routes.js";
+import fetchUser from "./middleware/fetchUser.js";
 
 // ============== API ROUTES ===============================
 app.use("/api/users", userRouter);
