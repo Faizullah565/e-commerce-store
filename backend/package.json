@@ -6,6 +6,7 @@
   "author": "Faizullah",
   "license": "ISC",
   "description": "",
+
   "scripts": {
     "start": "node index.js"
   },
