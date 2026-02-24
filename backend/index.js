@@ -50,7 +50,7 @@ import fetchUser from "./middleware/fetchUser.js";
 // ============== API ROUTES ===============================
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
-app.use(fetchUser);
+// app.use(fetchUser);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
@@ -63,5 +63,9 @@ app.get("/api/test", (req, res) => {
   res.send("Hello Test");
 });
 
+app.listen(process.env.PORT||5000, (req, res)=>{
+  console.log(`Server is running on http://localhost:${process.env.PORT||5000}`)
+})
+
 //IMPORTANT FOR VERCEL
-export default app;
+// export default app;
