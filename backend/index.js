@@ -12,14 +12,20 @@ const app = express();
 
 // =========== MIDDLEWARE =====================
 
-// Better CORS (local + production)
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://e-commerce-store-five-zeta.vercel.app/"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://vercel.com/faizs-projects-985dffc8/e-commerce-store",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed"));
+      }
+    },
     credentials: true,
   })
 );
