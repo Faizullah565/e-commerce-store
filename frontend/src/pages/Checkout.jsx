@@ -98,12 +98,12 @@ const Checkout = () => {
                 Checkout
             </Typography>
             <Box
-            sx={{
-                display:"flex",
-                gap:"10px",
-                flexWrap:"wrap",
-                
-            }}
+                sx={{
+                    display: "flex",
+                    gap: "10px",
+                    flexWrap: "wrap",
+
+                }}
             >
                 <Box flex={2}>
                     {cart.map(item => (
@@ -116,9 +116,16 @@ const Checkout = () => {
                                 <Typography fontWeight="bold">{item.title}</Typography>
                                 <Typography>Rs {item.price}</Typography>
                                 <Box display="flex" alignItems="center">
-                                    <IconButton onClick={() => decreaseQuantity(item._id)}>
-                                        <RemoveIcon />
-                                    </IconButton>
+                                    {
+                                        item?.quantity > 1 ?
+                                            <IconButton onClick={() => decreaseQuantity(item._id)}>
+                                                <RemoveIcon />
+                                            </IconButton>
+                                            :
+                                            <IconButton disabled>
+                                                <RemoveIcon />
+                                            </IconButton>
+                                    }
                                     <Typography>{item.quantity}</Typography>
                                     <IconButton onClick={() => increaseQuantity(item._id)}>
                                         <AddIcon />
