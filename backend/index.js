@@ -12,24 +12,25 @@ const app = express();
 
 // =========== MIDDLEWARE =====================
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://e-commerce-store-five-zeta.vercel.app"
-];
+// const allowedOrigins = [
+//   "http://localhost:5173",
+//   "https://e-commerce-store-five-zeta.vercel.app"
+// ];
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     credentials: true,
+//   })
+// );
+app.use(cors())
 
 // Body parser
 app.use(express.json({ limit: "10mb" }));
