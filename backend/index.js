@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://e-commerce-store-orpin-eight.vercel.app",
+      "https://vercel.com/faizs-projects-985dffc8/e-commerce-store",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
