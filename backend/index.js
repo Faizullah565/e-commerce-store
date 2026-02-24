@@ -38,8 +38,11 @@ const connectDatabase = async () => {
   }
 };
 
-await connectDatabase();
-
+// await connectDatabase();
+connectDatabase().catch((err) => {
+  console.error("Database connection failed:", err);
+  process.exit(1);
+});
 // ============== IMPORT ROUTERS ===========================
 import userRouter from "./routes/users.routes.js";
 import productRouter from "./routes/products.routes.js";
@@ -63,9 +66,11 @@ app.get("/api/test", (req, res) => {
   res.send("Hello Test");
 });
 
-app.listen(process.env.PORT||5000, (req, res)=>{
-  console.log(`Server is running on http://localhost:${process.env.PORT||5000}`)
-})
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 //IMPORTANT FOR VERCEL
 // export default app;

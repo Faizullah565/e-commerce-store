@@ -6,7 +6,6 @@
   "author": "Faizullah",
   "license": "ISC",
   "description": "",
-
   "scripts": {
     "start": "node index.js"
   },
@@ -17,7 +16,6 @@
     "bcryptjs": "^3.0.3",
     "cloudinary": "^2.9.0",
     "cors": "^2.8.6",
-    "crypto": "^1.0.1",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "express-group-routes": "^1.1.0",
@@ -26,8 +24,10 @@
     "mongoose": "^9.1.6",
     "multer": "^2.0.2",
     "nodemailer": "^8.0.1",
-    "nodemon": "^3.1.11",
     "stripe": "^20.3.1",
     "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
