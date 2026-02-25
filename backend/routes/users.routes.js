@@ -21,8 +21,8 @@ router.post("/forgot-password", forgotPassword)
 router.post("/reset-password/:token", resetPassword)
 
 // Protected routes
-// router.use(fetchUser)
-router.post("/logout", fetchUser, logout)
+router.use(fetchUser)
+router.post("/logout", logout)
 router.get("/fetch-profile", fetchProfile)
 router.put("/update-profile", upload.single("profilePicture"), updateProfile)
 router.put("/change-password", changePassword)
